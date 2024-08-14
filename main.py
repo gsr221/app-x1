@@ -5,8 +5,8 @@ from function import functions as f
 
 PRETO = '#000000'
 BRANCO = '#FFFFFF'
-AZULMEDIO = '#2C6fAB'
-AZULESCURO = '#035094'
+AZULMEDIO = '#38b6ff'
+AZULESCURO = '#1a3db2'
 
 
 master = Tk()
@@ -20,6 +20,7 @@ botaoAzulEscrito = PhotoImage(file="imagens/botaoAzulEscrito.png")
 botaoAmareloEscrito = PhotoImage(file="imagens/botaoAmareloEscrito.png")
 botaoPergIngles = PhotoImage(file="imagens/botaoPergIngles.png")
 botaoFatosUFJF = PhotoImage(file="imagens/botaoFatosUFJF.png")
+imgFundoPergResp = PhotoImage(file="imagens/fundoPergResp.png")
 
 
 #====Configurações da janela====#
@@ -46,16 +47,20 @@ fontRespostas = Font(
 
 
 #====Frames da página====#
+framePergResp = Frame(master,
+                      background=AZULMEDIO,
+                      bd=4)
+framePergResp.place(relx=0.02, rely=0.22, relwidth=0.96, relheight=0.61)
 framePergunta = Frame(
-    master,
+    framePergResp,
     background=AZULMEDIO,
     bd=4)
-framePergunta.place(relx=0.02, rely=0.22, relwidth=0.96, relheight=0.29)
+framePergunta.place(relx=0, rely=0, relwidth=1, relheight=0.47)
 frameRespostas = Frame(
-    master,
+    framePergResp,
     background=AZULMEDIO,
     bd=4)
-frameRespostas.place(relx=0.02, rely=0.51, relwidth=0.96, relheight=0.32)
+frameRespostas.place(relx=0, rely=0.47, relwidth=1, relheight=0.53)
 frameBotoes = Frame(
     master,
     background=AZULESCURO,
@@ -67,6 +72,13 @@ frameLogos = Frame(
     bd=4)
 frameLogos.place(relx=0.02, rely=0.02, relwidth=0.96, relheight=0.2)
 
+#====Fundo Pergunta e respostas====#
+# fundoPergResp = Label(
+#     framePergResp,
+#     background=AZULMEDIO,
+#     image=imgFundoPergResp)
+
+# fundoPergResp.place(relx=0.01, rely=0.01, relheight=0.98, relwidth=0.98)
 
 #====Botões====#
 botaoA = Button(
@@ -205,7 +217,7 @@ botaoFatosUf = Button(
 txtTema = Label(
     framePergunta,
     font=fontTema,
-    fg=BRANCO,
+    fg=PRETO,
     bd=10,
     text="",
     background=AZULMEDIO)
@@ -213,7 +225,7 @@ txtTema = Label(
 txtPergunta = Label(
     framePergunta,
     font=fontPergunta,
-    fg=BRANCO,
+    fg=PRETO,
     bd=10,
     text="",
     wraplength=1225, 

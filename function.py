@@ -2,7 +2,6 @@ import pandas as pd
 import random
 from tkinter import *
 from openpyxl import load_workbook
-from playsound import playsound
 
 BRANCO = "#FFFFFF"
 PRETO = "#000000"
@@ -16,11 +15,6 @@ ingAbas = ["Sports", "Games", "History and Geography", "Art and Music", "TV and 
 opcoes = ["B", "C", "D", "E"]
 sons = ["sons/correto.mp3", "sons/errou.mp3"]
 
-def tocaSom(opcao):
-    if opcao == 'c':
-        playsound(sound= sons[0], block= False)
-    elif opcao == 'e':
-        playsound(sound= sons[1], block= False)
 
 class functions:
     def __init__ (self, arquivoExc, pergunta, aba, numPergunta, numAba):
@@ -79,11 +73,11 @@ class functions:
             if cor == "FF00FF00" or cor == "FFFF0000":
                 botao["bg"] = VERDE
                 botao["fg"] = PRETO
-                tocaSom("c")
+
             else:
                 botao["bg"] = VERMELHO
                 botao["fg"] = PRETO
-                tocaSom("e")
+
 
 
         if opcao == "B":
@@ -94,11 +88,10 @@ class functions:
             if cor == "FF00FF00" or cor == "FFFF0000":
                 botao["bg"] = VERDE
                 botao["fg"] = PRETO
-                tocaSom("c")
+
             else:
                 botao["bg"] = VERMELHO
                 botao["fg"] = PRETO
-                tocaSom("e")
 
 
         if opcao == "C":
@@ -109,11 +102,10 @@ class functions:
             if cor == "FF00FF00" or cor == "FFFF0000":
                 botao["bg"] = VERDE
                 botao["fg"] = PRETO
-                tocaSom("c")
+
             else:
                 botao["bg"] = VERMELHO
                 botao["fg"] = PRETO
-                tocaSom("e")
 
 
         if opcao == "D":
@@ -124,11 +116,11 @@ class functions:
             if cor == "FF00FF00" or cor == "FFFF0000":
                 botao["bg"] = VERDE
                 botao["fg"] = PRETO
-                tocaSom("c")
+
             else:
                 botao["bg"] = VERMELHO
                 botao["fg"] = PRETO
-                tocaSom("e")
+#                tocaSom("e")
     
     def reset(self, botaoA, botaoB, botaoC, botaoD, txtTema, txtPerg):
         botaoA["text"]=""
