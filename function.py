@@ -42,10 +42,10 @@ class functions:
         botaoC["bg"] = AZULMEDIO
         botaoD["bg"] = AZULMEDIO
 
-        botaoA["fg"] = BRANCO
-        botaoB["fg"] = BRANCO
-        botaoC["fg"] = BRANCO
-        botaoD["fg"] = BRANCO
+        botaoA["fg"] = PRETO
+        botaoB["fg"] = PRETO
+        botaoC["fg"] = PRETO
+        botaoD["fg"] = PRETO
 
         botaoA["text"] = self.arquivoExc.iloc[self.numPergunta, 1]
         botaoB["text"] = self.arquivoExc.iloc[self.numPergunta, 2]
