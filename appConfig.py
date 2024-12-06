@@ -14,6 +14,7 @@ class AppConfig():
         self.botaoAzulEscrito = PhotoImage(file="imagens/botaoAzulEscrito.png")
         self.botaoAmareloEscrito = PhotoImage(file="imagens/botaoAmareloEscrito.png")
         self.botaoFatosUFJF = PhotoImage(file="imagens/botaoFatosUFJF.png")
+        self.botaoMulNaEng = PhotoImage(file="imagens/botaoMulheresNaEngenharia.png")
         self.imgFundoPergResp = PhotoImage(file="imagens/fundoPergResp.png")
 
         #====Fontes====#
@@ -220,14 +221,32 @@ class AppConfig():
                 botaoC=self.botaoC, 
                 botaoD=self.botaoD))
         
+        #BOTAO SORTEIO MULHERES NA ENGENHARIA
+        self.botaoMulheresNaEng = Button(
+            self.frameBotoes,
+            image=self.botaoMulNaEng,
+            bd=0,
+            background=AZULESCURO,
+            foreground=BRANCO,
+            activebackground=AZULESCURO,
+            command= lambda: f.funSorteio(
+                self=f,
+                dificuldade="M",
+                txtTema=self.txtTema, 
+                txtPergunta=self.txtPergunta, 
+                botaoA=self.botaoA, 
+                botaoB=self.botaoB, 
+                botaoC=self.botaoC, 
+                botaoD=self.botaoD))
+        
         self.botaoA.place(relx=0.05, rely=0.05, relwidth=0.43, relheight=0.4)
         self.botaoB.place(relx=0.52, rely=0.05, relwidth=0.43, relheight=0.4)
         self.botaoC.place(relx=0.05, rely=0.55, relwidth=0.43, relheight=0.4)
         self.botaoD.place(relx=0.52, rely=0.55, relwidth=0.43, relheight=0.4)
         
-        self.botaoSorteioNormal.place(relx=0.02, rely=0.02, relwidth=0.29, relheight=0.96)
-        self.botaoFatosUf.place(relx=(0.33+0.02),rely=0.02, relwidth=0.29, relheight=0.96)
-        self.botaoSorteioDificil.place(relx=(0.66+0.02), rely=0.02, relwidth=0.29, relheight=0.96)
+        self.botaoSorteioNormal.place(relx=0.02, rely=0.02, relwidth=0.32, relheight=0.96)
+        self.botaoSorteioDificil.place(relx=(0.32), rely=0.02, relwidth=0.32, relheight=0.96)
+        self.botaoMulheresNaEng.place(relx=(0.64), rely=0.02, relwidth=0.32, relheight=0.96)
         
     def SetupLogos(self):
         self.logoPETLabel = Label(

@@ -12,25 +12,29 @@ class functions:
         self.numPergunta = numPergunta
         self.numAba = numAba
 
+    #Isso aqui é uma grande gambiarra, mas funciona, futuramente melhorar isso
     def funSorteio (self, dificuldade, txtTema, txtPergunta, botaoA, botaoB, botaoC, botaoD):
         if dificuldade == "N":
             self.numPergunta = random.randint(0, 9)
-            self.numAba = random.randint(0, 5)
+            self.numAba = random.randint(1, 6)
         elif dificuldade == "D":
             self.numPergunta = random.randint(10, 14)
-            self.numAba = random.randint(0, 4)
+            self.numAba = random.randint(1, 5)
         elif dificuldade == "E":
             self.numPergunta = random.randint(15, 18)
-            self.numAba = random.randint(0, 5)
+            self.numAba = random.randint(1, 6)
         elif dificuldade == "F":
             self.numAba = 6
             self.numPergunta = random.randint(0,9)
+        elif dificuldade == "M":
+            self.numAba = 0
+            self.numPergunta = random.randint(0,18)
 
         self.aba = abas[self.numAba]
         self.arquivoExc = pd.read_excel("planilha/PerguntasX1.xlsx", sheet_name=self.aba)
         self.pergunta = self.arquivoExc.iloc[self.numPergunta, 0]
 
-        if dificuldade == "N" or dificuldade == "D" or dificuldade == "F":
+        if dificuldade == "N" or dificuldade == "D" or dificuldade == "F" or dificuldade == "M":
             txtTema["text"] = self.aba
         if dificuldade == "E":
             txtTema["text"] = ingAbas[self.numAba]
